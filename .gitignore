@@ -1,4 +1,3 @@
 /infra/nginx/error.log
 /infra/nginx/access.log
 /infra/php/error.log
-/infra/nginx/default.conf

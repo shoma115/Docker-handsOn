@@ -5,6 +5,7 @@ services:
     build: ./infra/php
     volumes:
       - ./src:/data
+      - ./src/.env:/data/.env
 
   web:
     image: nginx:1.20-alpine
@@ -17,3 +18,11 @@ services:
       - ./infra/nginx/access.log:/var/log/nginx/access.log
 
     working_dir: /data
+  
+  db:
+    build: ./infra/mysql
+    volumes:
+     - db-store:/var/lib/mysql
+
+volumes:
+  db-store:
